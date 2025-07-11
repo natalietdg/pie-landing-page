@@ -164,6 +164,66 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .landing-container {
+    min-height: unset;
+    padding: 0 0.5rem;
+  }
+  .hero {
+    padding: 40px 5px 30px 5px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    margin-bottom: 1.2em;
+  }
+  .signup-form {
+    padding: 1.2em 0.9em 1em 0.9em;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .signup-form input {
+    font-size: 0.97rem;
+    padding: 0.8em 0.8em;
+  }
+  .signup-btn, .cta-btn {
+    font-size: 1rem;
+    padding: 0.8em 0;
+    width: 100%;
+  }
+  .cta-btn {
+    margin-top: 1em;
+  }
+  .hero p {
+    font-size: 1.05rem;
+    margin-bottom: 1em;
+  }
+  /* Responsive grid: stack columns */
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1em !important;
+  }
+  .grid.grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+  /* Make cards and charts full width */
+  .dashboard-card, .feature-adoption-chart, .ai-insight-card {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto 1em auto;
+    box-sizing: border-box;
+  }
+  /* Fix chart bars on mobile */
+  .feature-adoption-chart .w-24 {
+    width: 70px !important;
+  }
+}
+
 .sphere {
   position: absolute;
     top: 27%;
