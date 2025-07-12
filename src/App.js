@@ -186,25 +186,32 @@ export default function PilotLandingPage() {
           Your analytics show <span className="font-semibold text-[#643aff]">feature usage</span>. But <span className="font-semibold text-[#643aff]">which features</span> should you promote to drive growth?
         </div>
       </div>
-      <div className="absolute top-0 px-[150px] py-16 relative z-10">
+      <div className="relative z-10 px-4 py-8 sm:px-8 md:px-16 lg:px-[150px] lg:py-16">
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 items-start mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-10 mb-16">
           {/* Left Side - Form and Benefits */}
 
-          <div className="space-y-12 my-auto">
+          <div className="space-y-10 my-auto w-full max-w-2xl mx-auto lg:mx-0">
 
             {/* Header */}
             <div className="text-left mb-16">
               <div className="inline-block backdrop-blur-sm bg-white/50 border border-white/70 rounded-full px-8 py-3 mb-6 text-sm font-medium shadow-lg text-gray-700">
                 🚀 Limited Early Access
               </div>
-              <h1 className="text-[100px] font-bold mb-6 text-black text-left w-[700px]" style={{ lineHeight: '100px' }}>
-                Get Early Access to{' '}
-                <span className="bg-gradient-to-r from-[#643aff] to-purple-600 bg-clip-text text-transparent">
-                  Pie
-                </span>
-              </h1>
+              <h1
+  className="font-bold mb-6 text-black text-left 
+    text-4xl sm:text-7xl md:text-7xl lg:text-7xl
+    leading-tight sm:leading-[1.1] 
+    w-full sm:w-[500px] md:w-[600px] lg:w-[700px]"
+>
+  Get Early Access to{' '}
+  <span className="bg-gradient-to-r from-[#643aff] to-purple-600 bg-clip-text text-transparent text-4xl sm:text-7xl md:text-7xl lg:text-7xl
+    leading-tight sm:leading-[1.1] 
+    w-full sm:w-[500px] md:w-[600px] lg:w-[700px]">
+    Pie
+  </span>
+</h1>
               <p className="text-xl text-gray-700 max-w-2xl text-left">
                 AI-powered growth analysis that discovers cross-feature adoption opportunities and tells you exactly which users to target next.
               </p>
@@ -213,16 +220,20 @@ export default function PilotLandingPage() {
           </div>
 
           {/* Right Side - Product Screenshot */}
-          <div className="relative w-[1000px] right-[-26%]">
-            <Screenshot />
-          </div>
+          <div
+  className="relative w-full max-w-full sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1000px]
+    mx-auto flex justify-center items-center
+    lg:block lg:right-[-26%]"
+>
+  <Screenshot />
+</div>
         </div>
-        <div className="flex flex-row items-start justify-center mb-20 gap-16 m-0 backdrop-blur-sm bg-white/60 rounded-2xl p-8 border border-white/80 shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-white/70">
+        <div className="flex flex-col lg:flex-row items-start justify-center mb-10 gap-8 lg:gap-16 m-0 backdrop-blur-sm bg-white/60 rounded-2xl p-4 sm:p-8 border border-white/80 shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-white/70 w-full max-w-5xl mx-auto">
 
           {/* Benefits Section */}
-          <div className='max-w-[500px]'>
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">Turn Analytics Into Growth</h2>
-            <p className="text-gray-700 mb-6">
+          <div className='w-full max-w-xl mx-auto lg:mx-0 mb-8 lg:mb-0'>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-gray-800">Turn Analytics Into Growth</h2>
+            <p className="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6">
               Most analytics tools show you WHAT happened. Pie tells you WHY it happened and exactly which features to promote to drive adoption.
             </p>
 
@@ -238,12 +249,12 @@ export default function PilotLandingPage() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span className="text-gray-700">{benefit}</span>
+                  <span className="text-sm sm:text-base text-gray-700">{benefit}</span>
                 </div>
               ))}
             </div>
 
-            <div className="backdrop-blur-sm bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl p-6 border border-white/60 shadow-lg">
+            <div className="backdrop-blur-sm bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl p-4 sm:p-6 border border-white/60 shadow-lg">
               <div className="text-sm font-medium text-[#643aff] mb-2">Example Insight:</div>
               <div className="text-gray-700 text-sm italic">
                 "Users who try Features A + B together are 3x more likely to upgrade. Here are 247 users to target with your in-app promotion."
@@ -252,9 +263,9 @@ export default function PilotLandingPage() {
           </div>
 
           {/* Form */}
-          <div className="mt-0">
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">Secure Your Spot</h2>
-            <p className="mb-6 text-gray-700">
+          <div className="w-full max-w-xl mx-auto lg:mx-0 mt-0">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-gray-800">Secure Your Spot</h2>
+            <p className="mb-4 sm:mb-6 text-base sm:text-lg text-gray-700">
               Fill out the form below to join our exclusive pilot program. We'll be in touch within 48 hours.
             </p>
 
@@ -322,17 +333,17 @@ export default function PilotLandingPage() {
         </div>
 
         {/* How It Works */}
-        <div className="backdrop-blur-sm bg-white/60 rounded-2xl p-8 border border-white/80 shadow-xl mb-20 hover:shadow-2xl transition-all duration-300 hover:bg-white/70">
-          <h2 className="text-3xl font-bold mb-8 text-gray-800 text-center">How It Works</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="backdrop-blur-sm bg-white/60 rounded-2xl p-4 sm:p-8 border border-white/80 shadow-xl mb-10 hover:shadow-2xl transition-all duration-300 hover:bg-white/70 w-full max-w-5xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-gray-800 text-center">How It Works</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center">
               <div className="w-16 h-16 backdrop-blur-sm bg-gradient-to-br from-blue-500/30 to-cyan-500/30 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-white/60 shadow-lg">
                 <svg className="w-8 h-8 text-[#643aff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">1. Connect Your Data</h3>
-              <p className="text-gray-600">Link your user events and business outcomes in under 5 minutes</p>
+              <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2 text-gray-800">1. Connect Your Data</h3>
+              <p className="text-sm sm:text-base text-gray-600">Link your user events and business outcomes in under 5 minutes</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 backdrop-blur-sm bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-white/60 shadow-lg">

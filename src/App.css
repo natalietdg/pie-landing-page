@@ -1,8 +1,14 @@
+html {
+  /* Fluid base font size: scales between 16px and 20px from 320px to 1200px viewport width */
+  font-size: clamp(16px, 2vw + 1rem, 20px);
+}
+
 body {
   margin: 0;
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   background: #d9d9d9;
   color: #222;
+  line-height: 1.6;
 }
 
 .landing-container {
@@ -10,6 +16,38 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+
+/* Responsive text for general elements */
+h1 {
+  font-size: clamp(2rem, 7vw, 4rem);
+}
+h2 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+h3 {
+  font-size: clamp(1.2rem, 4vw, 2rem);
+}
+p, li, label, span, a {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+/* Mobile-specific tweaks */
+@media (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+  .hero {
+    padding: 48px 8px 32px 8px;
+  }
+  .signup-form {
+    padding: 1.2em 1em 1em 1em;
+    max-width: 98vw;
+  }
+  .gradient-text {
+    font-size: clamp(1.5rem, 10vw, 2.5rem);
+  }
+}
+
 
 .hero {
   background: #d9d9d9;
@@ -21,16 +59,29 @@ body {
   align-items: center;
 }
 
+.hero h1,
+.hero h2,
+.hero h3 {
+  font-size: clamp(2rem, 7vw, 4rem);
+  margin-bottom: 0.5em;
+}
+
+.hero p {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
 .gradient-text {
   background: linear-gradient(90deg, #b74cf7 0%, #643aff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 800;
 }
 
 .hero-sub {
-  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
   margin-bottom: 2em;
   font-weight: 400;
 }
@@ -55,6 +106,7 @@ body {
   font-size: 1rem;
   margin-bottom: 0.5em;
   outline: none;
+  font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 .signup-form input:focus {
@@ -67,7 +119,7 @@ body {
   border: none;
   border-radius: 8px;
   padding: 0.9em 0;
-  font-size: 1.12rem;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
   font-weight: bold;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
