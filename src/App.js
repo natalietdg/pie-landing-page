@@ -189,10 +189,10 @@ export default function PilotLandingPage() {
       <div className="relative z-10 px-4 py-8 sm:px-8 md:px-16 lg:px-[150px] lg:py-16">
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-10 mb-16">
-          {/* Left Side - Form and Benefits */}
+        <div class="grid grid-cols-1 lg:grid-cols-2 items-start gap-7 mb-16 -ml-[50px]">
+        {/* Left Side - Form and Benefits */}
 
-          <div className="space-y-10 my-auto w-full max-w-2xl mx-auto lg:mx-0">
+          <div className="space-y-10 my-auto w-full max-w-2xl mx-auto mr-0">
 
             {/* Header */}
             <div className="text-left mb-16">
@@ -223,7 +223,7 @@ export default function PilotLandingPage() {
           <div
   className="relative w-full max-w-full sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1000px]
     mx-auto flex justify-center items-center
-    lg:block lg:right-[-26%]"
+    lg:block lg:right-[-6%]"
 >
   <Screenshot />
 </div>
