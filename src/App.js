@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Vision from './Vision';
 import config from './config';
 
@@ -207,6 +207,16 @@ export function LandingPage() {
     }));
   };
 
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.replace('#', ''));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location])
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -295,7 +305,7 @@ export function LandingPage() {
 
 
           {/* Form Section */}
-          <section className="py-20 bg-gray-50 rounded-3xl">
+          <section className="py-20 bg-gray-50 rounded-3xl" id="form">
             <div className="max-w-2xl mx-auto text-center px-8">
               <h2 className="text-4xl md:text-5xl font-light mb-8 text-foreground tracking-tight leading-tight">Secure Your Spot</h2>
               <p className="text-xl text-foreground/70 font-light mb-12">
