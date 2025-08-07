@@ -519,9 +519,9 @@ export default function App() {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center pt-12">
-              <Link to="/#form" className="px-12 py-4 bg-primary text-white font-normal hover:bg-primary/90 transition-all duration-300 hover:scale-[1.02]">
+              <a to="/#form" className="px-12 py-4 bg-primary text-white font-normal hover:bg-primary/90 transition-all duration-300 hover:scale-[1.02]">
                 Join our pilot program →
-              </Link>
+              </a>
               <Link to="https://www.youtube.com/watch?v=sMnoFza6QE8" className="px-12 py-4 border border-gray-300 font-normal text-foreground hover:bg-gray-50 transition-all duration-300">
                 See the demo →
               </Link>
