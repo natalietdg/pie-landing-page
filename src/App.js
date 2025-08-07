@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Vision from './Vision';
+import { Link, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import config from './config';
 
 // Product Screenshot Component
@@ -6,7 +8,7 @@ const Screenshot = () => {
   return (
     <div className="relative">
       {/* Main Dashboard Container */}
-      <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden transform rotate-1 hover:rotate-0 transition-all duration-500">
+      <div className="bg-white  shadow-2xl border border-gray-200 overflow-hidden transform rotate-1 hover:rotate-0 transition-all duration-500">
         {/* Header */}
         <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-4 border-b border-gray-200">
           <div className="flex items-center justify-between">
@@ -23,17 +25,17 @@ const Screenshot = () => {
         <div className="p-6 bg-gradient-to-br from-blue-50 to-purple-50">
           {/* Stats Cards */}
           <div className="grid grid-cols-3 gap-4 mb-6">
-            <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+            <div className="bg-white  p-4 shadow-sm border border-gray-100">
               <div className="text-xs text-gray-500 mb-1">Growth Score</div>
               <div className="text-2xl font-bold text-emerald-600">8.4</div>
               <div className="text-xs text-emerald-600">↗ +2.1 this week</div>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+            <div className="bg-white  p-4 shadow-sm border border-gray-100">
               <div className="text-xs text-gray-500 mb-1">Opportunities</div>
               <div className="text-2xl font-bold text-blue-600">12</div>
               <div className="text-xs text-blue-600">3 high-impact</div>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+            <div className="bg-white  p-4 shadow-sm border border-gray-100">
               <div className="text-xs text-gray-500 mb-1">Users to Target</div>
               <div className="text-2xl font-bold text-purple-600">247</div>
               <div className="text-xs text-purple-600">Ready for outreach</div>
@@ -41,7 +43,7 @@ const Screenshot = () => {
           </div>
 
           {/* AI Insight Card */}
-          <div className="bg-gradient-to-r from-[#643aff] to-purple-600 rounded-xl p-6 text-white mb-6 shadow-lg">
+          <div className="bg-gradient-to-r from-[#643aff] to-purple-600  p-6 text-white mb-6 shadow-lg">
             <div className="flex items-start space-x-3">
               <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -63,7 +65,7 @@ const Screenshot = () => {
           </div>
 
           {/* Feature Adoption Chart */}
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+          <div className="bg-white  p-6 shadow-sm border border-gray-100">
             <div className="flex items-center justify-between mb-4">
               <h3 className="font-semibold text-gray-800">Feature Adoption Impact</h3>
               <div className="text-xs text-gray-500">Last 30 days</div>
@@ -104,7 +106,7 @@ const Screenshot = () => {
       </div>
 
       {/* Floating Action Cards */}
-      <div className="absolute -right-4 -bottom-4 bg-white rounded-xl shadow-lg border border-gray-200 p-4 max-w-xs transform rotate-3 hover:rotate-1 transition-all duration-300">
+      <div className="absolute -right-4 -bottom-4 bg-white  shadow-lg border border-gray-200 p-4 max-w-xs transform rotate-3 hover:rotate-1 transition-all duration-300">
         <div className="text-xs text-gray-500 mb-1">Recommended Action</div>
         <div className="text-sm font-semibold text-gray-800 mb-2">Create In-App Promotion</div>
         <div className="text-xs text-gray-600 mb-3">Target 247 users with Export + Collaboration combo</div>
@@ -116,7 +118,19 @@ const Screenshot = () => {
   );
 };
 
-export default function PilotLandingPage() {
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/vision" element={<Vision />} />
+      </Routes>
+    </Router>
+  );
+}
+
+
+export function LandingPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -171,21 +185,20 @@ export default function PilotLandingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/40 to-indigo-300/40 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-indigo-200/30 to-purple-300/30 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-cyan-200/25 to-blue-300/25 rounded-full blur-3xl"></div>
-      </div>
-
-
-      {/* Problem Hook */}
-      <div className="text-left text-gray-800 mb-8">
-        <div className="text-lg text-center backdrop-blur-sm bg-white/60 rounded-2xl p-6 border border-white/80 shadow-xl">
-          Your analytics show <span className="font-semibold text-[#643aff]">feature usage</span>. But <span className="font-semibold text-[#643aff]">which features</span> should you promote to drive growth?
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-8 py-4">
+          <div className="flex items-center justify-between relative">
+            <div className="text-2xl font-medium text-foreground relative z-10">Pie</div>
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-lg text-center w-full pointer-events-none">
+              <span className="inline-block pointer-events-auto text-foreground/70 font-light">
+                Your analytics show <span className="font-medium text-[#643aff]">feature usage</span>. But <span className="font-medium text-[#643aff]">which features</span> should you promote to drive growth?
+              </span>
+            </div>
+          </div>
         </div>
-      </div>
+      </header>
       <div className="relative z-10 px-4 py-8 sm:px-8 md:px-16 lg:px-[150px] lg:py-16">
 
         {/* Main Content Grid */}
@@ -196,22 +209,22 @@ export default function PilotLandingPage() {
 
             {/* Header */}
             <div className="text-left mb-16">
-              <div className="inline-block backdrop-blur-sm bg-white/50 border border-white/70 rounded-full px-8 py-3 mb-6 text-sm font-medium shadow-lg text-gray-700">
+              <div className="inline-block backdrop-blur-sm bg-white/50 border border-gray-200 px-8 py-3 mb-6 text-sm font-medium text-gray-700">
                 🚀 Limited Early Access
               </div>
               <h1
-  className="font-bold mb-6 text-black text-left 
+                className="font-bold mb-6 text-black text-left 
     text-4xl sm:text-7xl md:text-7xl lg:text-7xl
     leading-tight sm:leading-[1.1] 
     w-full sm:w-[500px] md:w-[600px] lg:w-[700px]"
->
-  Get Early Access to{' '}
-  <span className="bg-gradient-to-r from-[#643aff] to-purple-600 bg-clip-text text-transparent text-4xl sm:text-7xl md:text-7xl lg:text-7xl
+              >
+                Get Early Access to{' '}
+                <span className="bg-gradient-to-r from-[#643aff] to-purple-600 bg-clip-text text-transparent text-4xl sm:text-7xl md:text-7xl lg:text-7xl
     leading-tight sm:leading-[1.1] 
     w-full sm:w-[500px] md:w-[600px] lg:w-[700px]">
-    Pie
-  </span>
-</h1>
+                  Pie
+                </span>
+              </h1>
               <p className="text-xl text-gray-700 max-w-2xl text-left">
                 AI-powered growth analysis that discovers cross-feature adoption opportunities and tells you exactly which users to target next.
               </p>
@@ -221,14 +234,14 @@ export default function PilotLandingPage() {
 
           {/* Right Side - Product Screenshot */}
           <div
-  className="relative w-full max-w-full sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1000px]
+            className="relative w-full max-w-full sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1000px]
     mx-auto flex justify-center items-center
     lg:block lg:right-[-6%]"
 >
   <Screenshot />
 </div>
         </div>
-        <div className="flex flex-col lg:flex-row items-start justify-center mb-10 gap-8 lg:gap-16 m-0 backdrop-blur-sm bg-white/60 rounded-2xl p-4 sm:p-8 border border-white/80 shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-white/70 w-full max-w-5xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-start justify-center mb-10 gap-8 lg:gap-16 m-0 backdrop-blur-sm bg-white/60  p-4 sm:p-8 border border-gray-200 border-gray-200 hover:shadow-md transition-all duration-300 hover:bg-white/70 w-full max-w-5xl mx-auto">
 
           {/* Benefits Section */}
           <div className='w-full max-w-xl mx-auto lg:mx-0 mb-8 lg:mb-0'>
@@ -239,7 +252,7 @@ export default function PilotLandingPage() {
 
             <div className="space-y-4 mb-8">
               {[
-                "Discover which features drive retention and revenue growth",
+                "Discover which featuxres drive retention and revenue growth",
                 "Get AI recommendations on which users to target for feature adoption",
                 "Turn weeks of data analysis into minutes of actionable growth insights"
               ].map((benefit, i) => (
@@ -254,7 +267,7 @@ export default function PilotLandingPage() {
               ))}
             </div>
 
-            <div className="backdrop-blur-sm bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl p-4 sm:p-6 border border-white/60 shadow-lg">
+            <div className="backdrop-blur-sm  p-4 sm:p-6 border border-gray-200">
               <div className="text-sm font-medium text-[#643aff] mb-2">Example Insight:</div>
               <div className="text-gray-700 text-sm italic">
                 "Users who try Features A + B together are 3x more likely to upgrade. Here are 247 users to target with your in-app promotion."
@@ -278,7 +291,7 @@ export default function PilotLandingPage() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl backdrop-blur-sm bg-white/70 border border-white/90 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400/50 focus:border-blue-400/50 transition-all shadow-lg"
+                  className="w-full px-4 py-3  backdrop-blur-sm bg-white/70 border border-gray-200 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400/50 focus:border-blue-400/50 transition-all shadow-lg"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -291,7 +304,7 @@ export default function PilotLandingPage() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl backdrop-blur-sm bg-white/70 border border-white/90 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400/50 focus:border-blue-400/50 transition-all shadow-lg"
+                  className="w-full px-4 py-3  backdrop-blur-sm bg-white/70 border border-gray-200 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400/50 focus:border-blue-400/50 transition-all shadow-lg"
                   placeholder="your@email.com"
                 />
               </div>
@@ -302,7 +315,7 @@ export default function PilotLandingPage() {
                   name="role"
                   value={formData.role}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl backdrop-blur-sm bg-white/70 border border-white/90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400/50 focus:border-blue-400/50 transition-all shadow-lg"
+                  className="w-full px-4 py-3  backdrop-blur-sm bg-white/70 border border-gray-200 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400/50 focus:border-blue-400/50 transition-all shadow-lg"
                 >
                   <option value="">Select your role...</option>
                   <option value="founder">Founder/CEO</option>
@@ -318,14 +331,14 @@ export default function PilotLandingPage() {
               <button
                 type="button"
                 onClick={handleSubmit}
-                className="w-full bg-gradient-to-r from-[#643aff] to-purple-600 text-white font-semibold py-4 px-6 rounded-xl hover:from-[#5a33e6] hover:to-purple-700 transform hover:scale-[1.02] transition-all duration-300 shadow-2xl hover:shadow-3xl"
+                className="w-full bg-primary text-white font-semibold py-4 px-6 hover:from-[#5a33e6] hover:to-purple-700 transform hover:scale-[1.02] transition-all duration-300 shadow-2xl hover:shadow-3xl"
               >
                 Join Pilot Program
               </button>
             </div>
 
             {showSuccess && (
-              <div className="mt-6 p-4 backdrop-blur-sm bg-gradient-to-r from-emerald-500/30 to-teal-500/30 rounded-xl text-center border border-white/70 shadow-lg">
+              <div className="mt-6 p-4 backdrop-blur-sm bg-gradient-to-r from-emerald-500/30 to-teal-500/30  text-center border border-gray-200 shadow-lg">
                 <span className="text-emerald-700">🎉 Thank you! We'll be in touch within 48 hours.</span>
               </div>
             )}
@@ -333,11 +346,11 @@ export default function PilotLandingPage() {
         </div>
 
         {/* How It Works */}
-        <div className="backdrop-blur-sm bg-white/60 rounded-2xl p-4 sm:p-8 border border-white/80 shadow-xl mb-10 hover:shadow-2xl transition-all duration-300 hover:bg-white/70 w-full max-w-5xl mx-auto">
+        <div className="backdrop-blur-sm bg-white/60  p-4 sm:p-8 border border-gray-200 border-gray-200 mb-10 hover:shadow-md transition-all duration-300 hover:bg-white/70 w-full max-w-5xl mx-auto">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-gray-800 text-center">How It Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 backdrop-blur-sm bg-gradient-to-br from-blue-500/30 to-cyan-500/30 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-white/60 shadow-lg">
+              <div className="w-16 h-16 backdrop-blur-sm bg-gradient-to-br from-blue-500/30 to-cyan-500/30  flex items-center justify-center mx-auto mb-4 border border-gray-200 shadow-lg">
                 <svg className="w-8 h-8 text-[#643aff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -346,7 +359,7 @@ export default function PilotLandingPage() {
               <p className="text-sm sm:text-base text-gray-600">Link your user events and business outcomes in under 5 minutes</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 backdrop-blur-sm bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-white/60 shadow-lg">
+              <div className="w-16 h-16 backdrop-blur-sm bg-gradient-to-br from-purple-500/30 to-pink-500/30  flex items-center justify-center mx-auto mb-4 border border-gray-200 shadow-lg">
                 <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
@@ -355,7 +368,7 @@ export default function PilotLandingPage() {
               <p className="text-gray-600">AI finds feature combinations that drive retention and revenue</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 backdrop-blur-sm bg-gradient-to-br from-emerald-500/30 to-teal-500/30 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-white/60 shadow-lg">
+              <div className="w-16 h-16 backdrop-blur-sm bg-gradient-to-br from-emerald-500/30 to-teal-500/30  flex items-center justify-center mx-auto mb-4 border border-gray-200 shadow-lg">
                 <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
@@ -366,12 +379,22 @@ export default function PilotLandingPage() {
           </div>
         </div>
 
+
+        <div className=' hover:shadow-md backdrop-blur-sm bg-white/60  border border-gray-200 text-2xl text-3xl/8  px-20 py-20 text-center flex flex-col items-center'>
+          <h3 className='text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-gray-800 text-center'>🔮 Want to see where this is going? </h3>
+          <p className='text-gray-800'>Pie isn’t just analytics with AI. <br /><br /></p>
+          <p className='text-gray-800'>It’s a new behavioral intelligence layer for product growth.</p><br />
+
+          <Link to="/vision" className="px-12 py-4 border border-gray-300 font-normal text-foreground hover:bg-gray-50 transition-all duration-300">Read our vision →</Link>
+        </div>
+
+
         {/* FAQ Section */}
-        {/* <div className="backdrop-blur-sm bg-white/60 rounded-2xl p-8 border border-white/80 shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-white/70">
+        {/* <div className="backdrop-blur-sm bg-white/60  p-8 border border-gray-200 border-gray-200 hover:shadow-md transition-all duration-300 hover:bg-white/70">
           <h2 className="text-3xl font-bold mb-8 text-gray-800 text-center">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="border-b border-white/40 pb-4">
+              <div key={index} className="border-b border-gray-200 pb-4">
                 <button
                   className="w-full text-left flex justify-between items-center py-2 text-gray-700 hover:text-[#643aff] transition-colors"
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
@@ -387,7 +410,7 @@ export default function PilotLandingPage() {
                   </svg>
                 </button>
                 {openFaq === index && (
-                  <div className="mt-2 text-gray-600 pl-4 backdrop-blur-sm bg-white/40 rounded-xl p-4 border border-white/60 shadow-inner">
+                  <div className="mt-2 text-gray-600 pl-4 backdrop-blur-sm bg-white/40  p-4 border border-gray-200 shadow-inner">
                     {faq.answer}
                   </div>
                 )}
