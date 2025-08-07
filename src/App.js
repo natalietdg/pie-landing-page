@@ -236,7 +236,7 @@ export function LandingPage() {
           <div
             className="relative w-full max-w-full sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1000px]
     mx-auto flex justify-center items-center
-    lg:block lg:right-[-6%]"
+    lg:block lg:right-[-26%]"
 >
   <Screenshot />
 </div>
